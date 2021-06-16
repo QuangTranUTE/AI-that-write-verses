@@ -1,2 +1,5 @@
-# AI-that-write-verse
-Just for fun
+# AI that write verse
+
+## What is this?
+
+
