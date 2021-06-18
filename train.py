@@ -1,6 +1,6 @@
 ''' 
 
-**NOTE: This code is under construction!**
+**NOTE: This project is under construction!**
 
 AI THAT MAKE VERSES
 Just for fun!
