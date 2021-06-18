@@ -285,7 +285,7 @@ stateless_model.save(r'models/truyenKieu_statefulRNN_converted.h5')
 # model = keras.models.load_model(r'models/truyenKieu_GRU_epoch262_accuracy0.8973.h5')
 model = keras.models.load_model(r'models/truyenKieu_statefulRNN_converted.h5')
 # model = keras.models.load_model(r'models/truyenKieu_GRU_wavenet_epoch108_loss3.7185.h5')
-use_stateful_RNN = False
+use_regular_RNN = 1 # For wavenet and stateful: set False
 vocab_list = joblib.load(r'datasets/vocab_list.joblib')
 #%%
 #region
@@ -297,13 +297,13 @@ def next_word(text, model, uniform_randomness=1):
         uniform_randomness: =1: sampling prob = y_proba
                             >>: sampling prob ~ [0, 0, 0,...]: uniform dist.
     Output: next char after 'text'
-    (Reference: Géron 2019 Hands-On Machine Learning)
+    (Source: Géron 2019 Hands-On Machine Learning)
     '''
     X_new = preprocess(text)
-    if use_stateful_RNN:
-        X_new = np.array([X_new[:, np.newaxis]]) ##### ONLY FOR statefulRNN_converted. # turn to batch of 1 sample of shape [None, 1]
-    else:
+    if use_regular_RNN:
         X_new = np.array([X_new]) # turn to batch of 1 sample
+    else:
+        X_new = np.array([X_new[:, np.newaxis]]) # FOR statefulRNN and wavenet. # turn to batch of 1 sample of shape [None, 1]
 
     y_proba = model.predict(X_new)[0, -1:, :]
     new_y_proba = y_proba / uniform_randomness    
