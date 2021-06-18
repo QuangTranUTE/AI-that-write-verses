@@ -15,7 +15,7 @@ Using the given `train.py` you can easily create, customize and train these mode
 It's like a fun art to train these models: we want them to overfit the training set in order to get the author's "style" of writing, but we don't want it to be too overfitting in order to get some fresh novel text. Oh, is it the Bias-variance tradeoff in machine learning?
 
 ## Brief description of the training data
-The training text is from Truyện Kiều (The Tale of Kiều)--a poem of 3,254 verses written in six–eigh meter. 
+The training text is from ***Truyện Kiều*** (***The Tale of Kiều***)--a poem of 3,254 verses written in six–eigh meter. 
 
 > "The Tale of Kiều is an epic poem in Vietnamese written by Nguyễn Du (1765–1820), considered the most famous poem and a classic in Vietnamese literature." (Wikipedia)
 
